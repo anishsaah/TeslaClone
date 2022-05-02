@@ -1,11 +1,13 @@
+import React, { Component } from 'react';
 import { StyleSheet, View, Text, Dimensions,FlatList  } from "react-native";
 import CarsList from "./components/CarsList";
 import Header from "./components/Header";
 import { Modal } from 'native-base';
 import {useState} from "react";
 import menu from "./components/Header/menu";
-import Icon from 'react-native-vector-icons/Ionicons';
-
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Left, Right, Icon } from 'native-base';
 
 
 export default function Base() {
@@ -18,10 +20,10 @@ export default function Base() {
     };
 
     return ( 
-      <View style = {styles.container}>
-         <Modal style={styles.modalStyles}
-            isOpen={open} 
-            onClose={closeModal}
+        <View style = {styles.container}>
+            <Modal style={styles.modalStyles}
+                isOpen={open} 
+                onClose={closeModal}
             >
             <View style={styles.iconMainContainer}>
                 <Ionicons style={styles.iconContainer}
@@ -30,6 +32,7 @@ export default function Base() {
                     onPress={closeModal}
                 />
             </View>
+           
            <View style={styles.menuListContainer} >
            <FlatList 
             data={menu}
@@ -81,6 +84,9 @@ const styles = StyleSheet.create({
         marginTop: 80,
         
     },
+    // menuIcon: {
+    //     flex: 1
+    // }
 
     
 

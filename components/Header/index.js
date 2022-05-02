@@ -9,17 +9,12 @@ export default function Header({openModal,closeModal}) {
   return (
     <View style={styles.container}>
         <Image style={styles.logo} source={logo} />
-        <TouchableOpacity 
-          onPress={openModal}
-          >
-        <Image 
-          style={styles.menu} 
-          source={menu} 
+        <TouchableOpacity onPress={openModal}>
+          <Image 
+            style={styles.menu} 
+            source={menu} 
           />
-        </TouchableOpacity>
-        
-
-        
+        </TouchableOpacity>        
     </View>
   )
 }

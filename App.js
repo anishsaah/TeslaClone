@@ -1,26 +1,33 @@
 // In App.js in a new project
 import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {  NavigationContainer } from '@react-navigation/native';
 import Base from './Base';
-// import { NativeBaseProvider } from 'native-base';
+import {  NativeBaseProvider } from 'native-base';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 
-const Stack = createNativeStackNavigator();
+
+const Drawer = createDrawerNavigator();
 
 function App() {
   return (
-  
+  <NativeBaseProvider>
     <NavigationContainer >
-      <Stack.Navigator 
+      <Drawer.Navigator 
         screenOptions={{
-          headerShown: false
+          headerShown: false,
+          drawerPosition: 'right'
         }}
       >
-        <Stack.Screen name="Home" component={Base} />
-      </Stack.Navigator>
+        <Drawer.Screen name="Home" component={Base} />
+        {/* <Stack.Screen name="Home" component={HomeScreen} /> */}
+        { /* <Stack.Screen name="Home" component={HomeScreen} /> */}
+        {/* <Stack.Screen name="Home" component={HomeScreen} /> */}
+      
+
+      </Drawer.Navigator>
     </NavigationContainer>
-    
+    </NativeBaseProvider>
   );
 }
 
