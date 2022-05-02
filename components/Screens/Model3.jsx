@@ -6,6 +6,7 @@ export default function Model3() {
     <View style={styles.container}>
       <Text>Model 3</Text>
       <Text>Order Online for  </Text>
+      
     </View>
   )
 
